@@ -1,0 +1,46 @@
+*{margin: 0;padding: 0;}
+#runEyeBall{
+    height: 300px;width: 500px;margin: 50px auto;
+}
+.eye{width: 150px;height: 300px;float: left;
+    border: solid black 30px;
+}
+.left_eye{border-top-right-radius: 150px;border-top-left-radius: 100px;
+    border-bottom-right-radius: 300px;border-bottom-left-radius: 50px;}
+.right_eye{
+    border-top-right-radius: 100px;border-top-left-radius: 150px;
+    border-bottom-right-radius: 50px;border-bottom-left-radius: 300px;
+    position: absolute;left:650px;
+}
+.eyeball{position: absolute;width: 50px;height: 50px;border-radius: 30px;background-color: #000000;}
+.nose{width: 30px;height: 100px;position: absolute;top:225px;left:600px;background-color: #000000;
+    border-radius: 100px;
+}
+.nose:before{content: "";position: absolute;left:5px;
+    width: 100px;height: 100px;border:solid 13px black;
+    border-radius: 100px;clip: rect(50px,40px,150px,0);
+}
+.nose:after{content: "";position: absolute;left:-100px;
+    width: 100px;height: 100px;border:solid 13px black;
+    border-radius: 100px;clip: rect(50px,150px,150px,85px);
+}
+.mouse{width: 100px;height: 100px;border:solid 20px black;border-radius: 100px;
+    position: absolute;top:350px;left:545px;
+    clip: rect(80px,300px,150px,-40px);
+}
+.mouse:after{content: "";position: absolute;top:60px;left:-31px;
+    width: 60px;height: 20px;border-radius: 100px;background-color: black;
+}
+.mouse:before{content: "";position: absolute;top:60px;left:74px;
+    width: 60px;height: 20px;border-radius: 100px;background-color: black;
+}
+
+.drawBoard{width: 800px;margin: 0 auto;margin-top: 300px;}
+h1{text-align: center;font-size: 25px;}
+.drawBoard div{border:solid 2px black;}
+.tools{height: 120px;margin-top: 10px;}
+.drawCanvas{height: 500px;}
+.tools ul{list-style: none;float: left;width: 100px;margin-left: 20px;}
+.tools ul li{margin-top: 20px;width: 60px;border:solid 1px black;text-align: center;}
+.tools ul li:hover{background-color: gray;cursor: pointer}
+.tools ul li input{height: 20px;}

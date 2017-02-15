@@ -1,0 +1,22 @@
+*{margin: 0;padding: 0}
+h1{text-align: center;margin-bottom: 20px;font-size: 25px;}
+#H5_canvas{width: 900px;height:420px;margin: 50px auto;}
+canvas{border:solid 1px black;}
+.chart1,.chart2{float: left}
+.chart2{margin-left: 50px;}
+
+#H5_form{width: 800px;height: 400px;margin: 0 auto}
+#H5_form ul{list-style: none;width: 380px;float: left}
+#H5_form fieldset{height: 350px;}
+#H5_form legend{margin-left: 50px;}
+
+.form1 li{font-size: 18px;margin: 30px 0 0 20px;width: 235px;}
+.form1 input{height: 22px;float: right}
+.SBtn{width: 50px;margin-right: 10px;}
+.RBtn{width: 50px;margin-right: 50px;}
+
+.form2{margin-left: 20px;}
+.form2 li{font-size: 18px;margin: 40px 0 0 40px;}
+.form2 input{height: 22px;width: 100px;}
+
+#chartJS{float: left;margin-left: 150px;margin-top: 30px;margin-bottom: 50px;}

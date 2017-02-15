@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>JS页面</title>
+    <link type="text/css" rel="stylesheet" href="CSS/styles.css">
+    <link type="text/css" rel="stylesheet" href="CSS/JSapge.css">
+    <script type="text/javascript" src="JS/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $(window).scroll(function(){
+                $offset = $('.placeholder').offset();//不能用自身的div，不然滚动起来会很卡
+                if($(window).scrollTop()>$offset.top){
+                    $('.navigation').css({'position':'fixed','top':'0px',
+                        'left':$offset.left+'px','z-index':'999'});
+                    $(".contact").css({"margin-top":"100px"});
+                }else{
+                    $('.navigation').removeAttr('style');
+                    $('.contact').removeAttr('style');
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+<div class="placeholder"></div>
+<div class="navigation">
+    <ul>
+        <li><a href="index.html">首页</a></li>
+        <li><a href="H5page.html">H5页面</a></li>
+        <li><a href="bootstrap.html">Bootstrap页面</a></li>
+        <li><a href="JSpage.html">JS页面</a></li>
+    </ul>
+</div>
+<div class="contact">
+    <div id="runEyeBall">
+        <div class="left_eye eye" id="leftEye">
+            <div class="left_eyeball eyeball" id="leftEyeBall"></div>
+            <!--<div class="nose"></div>-->
+            <div class="mouse"></div>
+        </div>
+        <div class="right_eye eye" id="rightEye">
+            <div class="right_eyeball eyeball" id="rightEyeBall"></div>
+        </div>
+    </div>
+    <div class="drawBoard">
+        <h1>JS简易绘画板</h1>
+        <div class="tools">
+            <ul style="margin-left: 120px;">
+                <li id="line" onClick="drawLine(0)">画线</li>
+                <li id="line1" onClick="drawLine1(1)">直线</li>
+            </ul>
+            <ul>
+                <li id="brush" onClick="brushLine(2)">刷子</li>
+                <li id="Eraser" onclick="dEraser(3)">橡皮擦</li>
+            </ul>
+            <ul>
+                <li>
+                    <label for="number">线宽：</label><br/>
+                    <input required type="number" id="number" min="1" max="10" step="1"
+                           onchange="setLineWidth()" value="1">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <label for="color">颜色：</label><br/>
+                    <input required type="color" id="color" onchange="setColor()">
+                </li>
+            </ul>
+            <ul>
+                <li  id="clear" style="margin: 60px 0 0 70px;">
+                    <button style="width: 60px;height: 30px;cursor: pointer;font-size: 20px">
+                        清除</button></li>
+            </ul>
+        </div>
+        <div class="drawCanvas">
+            <canvas id="myDrawCanvas" width="800px" height="500px"></canvas>
+        </div>
+    </div>
+    <script src="JS/JSpage.js" type="text/javascript"></script>
+</div>
+</body>
+</html>

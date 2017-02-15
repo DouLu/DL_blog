@@ -1,43 +1,235 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+<head lang="en">
     <meta charset="UTF-8">
-    <title>doulu blog</title>
-    <link type="text/css" rel="stylesheet" href="base.css">
+    <title>DouLu</title>
+    <link type="text/css" rel="stylesheet" href="CSS/styles.css">
+    <link type="text/css" rel="stylesheet" href="CSS/dingdangcat.css">
+    <link type="text/css" rel="stylesheet" href="CSS/mouse.css">
+    <link type="text/css" rel="stylesheet" href="CSS/animation.css">
+    <script type="text/javascript" src="JS/JS连连消小游戏.js"></script>
+    <script type="text/javascript" src="JS/profile.js"></script>
+    <script type="text/javascript" src="JS/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $(window).scroll(function(){
+                $offset = $('.placeholder').offset();//不能用自身的div，不然滚动起来会很卡
+                if($(window).scrollTop()>$offset.top){
+                    $('.navigation').css({'position':'fixed','top':'0px',
+                        'left':$offset.left+'px','z-index':'999'});
+                    $("#box1").css({"margin-top":"100px"});
+                }else{
+                    $('.navigation').removeAttr('style');
+                    $('#box1').removeAttr('style');
+                }
+            });
+        })
+    </script>
+    <!--H5拖放-->
+    <script>
+        function allowDrop(ev)
+        {
+            ev.preventDefault();
+        }
+
+        function drag(ev)
+        {
+            ev.dataTransfer.setData("Text",ev.target.id);
+        }
+
+        function drop(ev)
+        {
+            ev.preventDefault();
+            var data=ev.dataTransfer.getData("Text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
 </head>
 <body>
-<header class="title">
-    <h1>web前端学习记录</h1>
-    <p>2017年2月7号</p>
-</header>
-<aside class="left-nav">
-    <a href="#part1">知识点+实践</a>
-    <a href="#part2">知识点总结</a>
-    <a href="#part3">学习发散实践</a>
-</aside>
-<section class="part1 part">
-    <a name="part1">知识点+实践</a>
-    <div class="html-part">HTML</div>
-    <div class="html5-part">HTML5</div>
-</section>
-<section class="part2 part">
-    <a name="part2">知识点总结</a>
-    <div class="knowledge-summary">
-        <h2>HTML超文本标记语言</h2>
-        <div class="content">
-            <p>&lt;!DOCTYPE html&gt;用于HTML5的文档声明。告诉浏览器用什么标准解析这个文档。
-            因为HTML4基于SGML，需要引用DTD，告知浏览器文档使用的文档类型.
-            而HTML5不基于SGML，不需要引用DTD
-            </p>
-            <hr><p>标准通用标记语言（Standard Generalized Markup Language，SGML）
-                是现时常用的<em>超文本</em>格式的最高层次标准，是可以定义标记语言的<em>元语言</em>，
-                甚至可以定义不必采用< >的常规方式。</p>
+<div class="placeholder"></div>
+<div class="navigation">
+    <ul>
+        <li><a href="index.html">首页</a></li>
+        <li><a href="H5page.html">H5页面</a></li>
+        <li><a href="bootstrap.html">Bootstrap页面</a></li>
+        <li><a href="JSpage.html">JS页面</a></li>
+    </ul>
+</div>
+<div id="box1" class="box">
+    <div class="box1_left" id="box1_left">
+        <div class="box1_img"><img src="images/btn_01.png"></div>
+        <div class="left_main" id="left_main">
+            <div class="logo"><img src="images/logo1.png"></div>
+            <h1>窦露的个人主页</h1>
+            <div class="nav">
+                <ul>
+                    <li><a href="#" onclick="profile()">简历</a></li>
+                    <li><a href="#CSS">CSS3作品展示</a></li>
+                    <li><a href="#H5">H5作品展示</a></li>
+                    <li><a href="#JS">JS作品展示</a></li>
+                </ul>
+            </div>
         </div>
     </div>
-</section>
-<section class="part3 part">
-    <a name="part3">学习发散实践</a>
-</section>
+    <div id="box1_center">
+    <div class="profile" id="profile">
+        <button onclick="close1()" style="float: right;cursor: pointer;
+        width: 60px;height: 30px;font-size: 18px;margin-top: 30px">
+            关闭</button>
+        <h2 style="text-align: center;margin-top: 20px">窦露</h2><br/>
+        <h6 style="font-size: 12px;text-align: center">电话：18487231635 &nbsp;邮箱：2735413301@qq.com</h6>
+        <br/>
+        <h3>教育背景</h3>
+        <p>云南大学 &nbsp;本科 &nbsp;数字媒体技术专业 &nbsp;2017年毕业</p><br/><br/>
+        <h3>技能爱好</h3>
+        <p><b>IT技能 ：</b>熟练HTML,CSS网页布局；&nbsp;熟悉JS，H5；&nbsp;会用bootstrap，jQuery</p>
+        <p><b>兴趣爱好 :</b> 喜欢网页效果，自己用CSS3制作了叮当猫、多边形、放大镜等图案</p><br/><br/>
+        <h3>个人评价</h3>
+        <p style="text-align: left;width:80%;margin:20px auto ">
+            虽然现在技术水平一般，但是我对Web前端开发有极大的兴趣，我相信自己可以成为一名好的前端开发人员。<br/><br/>
+            我喜欢遇到难题，它会让我对知识的了解更加透彻。当你通过书本学习一个知识时，并不能透彻的明白它，但是在遇到的问题里面解决它时，才会有更深的认识。
+        </p>
+    </div>
+    </div>
+    <div class="box1_right" id="box1_right">
+        <div class="box1_img"><img src="images/btn_02.png"></div>
+        <div class="right_main">
+            <div class="logo"><img src="images/logo2.png"></div>
+            <div class="myprofile">
+                <p style="margin-top: 50px;color: #ffffff">
+                    现在是菜鸟，但本着喜爱前端开发的心<br/><br/>一定会成为一名优秀的前端攻城狮的！</p>
+            </div>
+            <a href="#CSS">作品展示</a>
+        </div>
+    </div>
+</div>
+<div id="CSS" class="box2 box">
+    <h1>纯CSS制作</h1>
+    <div id="cat" class="opus">
+        <h2>叮当猫</h2>
+        <div class="dingdangcat">
+        <div class="head">
+            <div class="in-head"></div>
+            <div class="cat_eye eye-left">
+                <div class="eyeball"></div>
+            </div>
+            <div class="cat_eye eye-right">
+                <div class="eyeball"></div>
+            </div>
+            <div class="red-nose"></div>
+            <div class="mid-line"></div>
+            <div class="face face-left">
+                <ul>
+                    <li class="l1"></li>
+                    <li class="l2"></li>
+                    <li class="l3"></li>
+                </ul>
+            </div>
+            <div class="face face-right">
+                <ul>
+                    <li class="l1"></li>
+                    <li class="l2"></li>
+                    <li class="l3"></li>
+                </ul>
+            </div>
+            <div class="cat_mouse">
+                <div class="mouse-over"></div>
+            </div>
+        </div>
+        <div class="mid-row">
+            <div class="bell">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="black-circle"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+        <div class="body">
+            <div class="hand left-hand">
+                <div class="palm"></div>
+            </div>
+            <div class="hand right-hand">
+                <div class="palm"></div>
+            </div>
+            <div class="tripe">
+                <div class="semi-circle"></div>
+            </div>
+        </div>
+        <div class="circle">
+            <div class="circle-over"></div>
+        </div>
+        <div class="foot left-foot"></div>
+        <div class="foot right-foot"></div></div>
+    </div>
+    <div id="mouse" class="opus">
+        <h2>可爱小老鼠</h2>
+        <div class="mouse">
+            <div class="left_ear ear"></div>
+            <div class="right_ear ear"></div>
+            <div class="M_face">
+                <div class="eye left_eye"></div>
+                <div class="eye right_eye"></div>
+                <div class="mouse_mouse"></div>
+            </div>
+            <div class="M_body">
+                <div class="M_hand M_left_hand"></div>
+                <div class="M_hand M_right_hand"></div>
+                <div class="M_foot M_left_foot"></div>
+                <div class="M_foot M_right_foot"></div>
+            </div>
+        </div>
+    </div>
+    <div id="animation" class="opus">
+        <h2>小球动画</h2>
+        <div id="ballWrapper" class="ball-box">
+            <div id="ball" class="ball" style="position: relative">
+        <span class="click" style="font-size: 18px;color:white;
+        position: absolute;top:58px;left: 30px;">click it!</span>
+            </div>
+            <div id="ballShadow"></div>
+        </div>
+    </div>
+</div>
+<div id="H5" class="box3 box">
+    <h1>H5拼图小游戏</h1>
+    <p>请将左边的小拼图正确的移至右边的方格里！<br/>看看你的拼图吧！</p>
+    <div class="jigsaw_left jigsaw">
+        <div class="jigsaw_photo">
+            <div class="jigsaw_chip">
+                <img id="drag1" src="images/p3_08.png" draggable="true" ondragstart="drag(event)">
+                <img id="drag2" src="images/p3_02.png" draggable="true" ondragstart="drag(event)">
+                <img id="drag3" src="images/p3_04.png" draggable="true" ondragstart="drag(event)">
+                <img id="drag4" src="images/p3_06.png" draggable="true" ondragstart="drag(event)">
+                <img id="drag5" src="images/p3_01.png" draggable="true" ondragstart="drag(event)">
+                <img id="drag6" src="images/p3_03.png" draggable="true" ondragstart="drag(event)">
+                <img id="drag7" src="images/p3_09.png" draggable="true" ondragstart="drag(event)">
+                <img id="drag8" src="images/p3_07.png" draggable="true" ondragstart="drag(event)">
+                <img id="drag9" src="images/p3_05.png" draggable="true" ondragstart="drag(event)">
+            </div>
+            <!--<img src="images/p3.jpg">-->
+        </div>
+    </div>
+    <div class="jigsaw_right jigsaw">
+        <div class="grid" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="grid" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="grid" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="grid" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="grid" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="grid" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="grid" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="grid" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="grid" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
+    <a href="index.html">
+    <input type="button" alt="刷新" name="btn" value="刷新"></a>
+</div>
+<div id="JS" class="box4 box">
+    <h1>JS连连消小游戏</h1>
+    <p>找到相同颜色的圆并分别点击它们，就可以消了！<br/>试试吧!</p>
+    <div class="perish" id="xiao">
+    </div>
+    <input type="button" alt="刷新" name="btn" value="刷新" onclick="refresh()">
+</div>
+<div class="back_top"><a href="#">top</a></div>
 </body>
-<script type="text/javascript" src="common.js"></script>
 </html>

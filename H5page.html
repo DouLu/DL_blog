@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>H5page</title>
+    <link type="text/css" rel="stylesheet" href="CSS/styles.css">
+    <link type="text/css" rel="stylesheet" href="CSS/H5page.css">
+    <script type="text/javascript" src="JS/jquery-2.2.3.min.js"></script>
+    <script src="ChartJS/Chart.js"></script>
+    <script type="text/javascript" src="JS/h5page.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $(window).scroll(function(){
+                $offset = $('.placeholder').offset();//不能用自身的div，不然滚动起来会很卡
+                if($(window).scrollTop()>$offset.top){
+                    $('.navigation').css({'position':'fixed','top':'0px',
+                        'left':$offset.left+'px','z-index':'999'});
+                    $(".contact").css({"margin-top":"100px"});
+                }else{
+                    $('.navigation').removeAttr('style');
+                    $('.contact').removeAttr('style');
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+<div class="placeholder"></div>
+<div class="navigation">
+    <ul>
+        <li><a href="index.html">首页</a></li>
+        <li><a href="H5page.html">H5页面</a></li>
+        <li><a href="bootstrap.html">Bootstrap页面</a></li>
+        <li><a href="JSpage.html">JS页面</a></li>
+    </ul>
+</div>
+<div class="contact">
+    <div id="H5_canvas">
+        <h1>canvas绘制图表</h1>
+        <div class="chart1">
+            <canvas width="400px" height="400px" id="myCanvas">
+            </canvas>
+        </div>
+        <div class="chart2">
+            <canvas width="400px" height="400px" id="histogram">
+            </canvas>
+        </div>
+    </div>
+    <div id="chartJS">
+        <h1>Chart.js绘制图表</h1>
+        <canvas width="300px" height="400px" id="lineChart"></canvas>
+        <canvas width="300px" height="400px" id="radarChart"></canvas>
+        <canvas width="300px" height="400px" id="polarChart"></canvas>
+    </div>
+    <div id="H5_form">
+        <form action="#" method="post" name="h5_form" id="form">
+            <fieldset>
+                <legend>H5表单验证</legend>
+                <ul class="form1">
+                    <li>
+                        <label for="userName">用户名：</label>
+                        <input id="userName" type="text" name="userName">
+                    </li>
+                    <li>
+                        <label for="password">密码：</label>
+                        <input id="password" type="password" name="password">
+                    </li>
+                    <li>
+                        <label for="email">邮箱：</label>
+                        <input required type="email" id="email" name="email">
+                    </li>
+                    <li>
+                        <label for="tel">电话：</label>
+                        <input required type="tel" id="tel" name="tel">
+                    </li>
+                    <li>
+                        <label for="url">网址：</label>
+                        <input required type="url" id="url" name="url">
+                    </li>
+                    <li><input type="submit" value="提交" class="SBtn">
+                    <input type="reset" value="重置" class="RBtn">
+                    </li>
+                </ul>
+                <ul class="form2">
+                    <li>
+                        <label for="search">搜索：</label>
+                        <input autofocus multiple required type="search"
+                               id="search" name="search" placeholder="搜索">
+                    </li>
+                    <li>
+                        <label for="date">日期：</label>
+                        <input type="date" id="date" min="1900-01-01" max="2024-12-31"><br>
+                    </li>
+                    <li>
+                        <!-- 数字选择器-->
+                        <label for="number">数字：</label>
+                        <input required type="number" id="number" min="-10" max="10" step="0.5">
+                    </li>
+                    <li>
+                        <!--颜色选择器-->
+                        <label for="color">颜色：</label>
+                        <input type="color" id="color"><br>
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+    </div>
+</div>
+</body>
+</html>

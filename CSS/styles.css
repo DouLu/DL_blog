@@ -1,0 +1,74 @@
+*{margin: 0;padding: 0;}
+/*width: 1230px;CSS书写顺序：位置属性、大小、文字系列、背景、其他*/
+.box{width: 100%;border: solid 1px black}
+.box,.box1_left,.box1_right{height: 600px;}
+.navigation{width: 100%;height: 60px;border:solid 1px black;background-color: rgba(25,25,25,0.9);}
+.navigation ul{width: 700px;height: 30px;
+    list-style: none;display: block;margin: 15px auto;}
+.navigation a{text-decoration: none;color: #ffffff;font-size: 20px;display: block}
+.navigation a:hover{color: #000000;transform: rotate(360deg) scale(1.2);}
+.navigation ul li{float: left;margin-left: 90px;}
+
+/*#box1{border-bottom:solid 2px darkgray;}*/
+.box1_img{display: block;width: 55px;height: 35px;margin: 50% auto;}
+.box1_left{float: left;width: 50%;
+    background-color: rgba(255,255,255,0.9);
+    /*background: rgba(255,255,255,0.9) url("../images/P1_01.png") no-repeat scroll 50% 30%;*/}
+.box1_left:hover .left_main{display: block}
+.box1_left:hover .box1_img{display: none}
+.box1_right{float: right;width: 50%;background-color: rgba(25,25,25,0.9);
+    /*background: rgba(25,25,25,0.9) url("../images/P1_02.png") no-repeat scroll 50% 30%;*/}
+.box1_right:hover .right_main{display: block}
+.box1_right:hover .box1_img{display: none}
+/*.logo,.left_main h1,.nav,.nav ul li,.nav a{border:solid 1px black;}*/
+.left_main{display: none}
+
+#box1_center{position: absolute;width: 100%;height: 600px;
+    background-color: #f1f1f1;display: none;}
+.profile{position:absolute;width:50%;top:5%;left:25%;}
+.profile h3{margin-left: 30px;}
+.logo img{height: 80px;}
+.logo{margin: 20px auto;width: 150px;}
+.left_main h1{margin: 50px auto;width: 250px;}
+.nav{margin: 80px auto;width: 150px;height: 300px;}
+.nav ul{list-style: none;}.nav a{text-decoration: none;}
+.nav ul li{margin: 20px auto;width: 100px;height: 30px;text-align: center}
+.nav a{display: block;padding-top: 6px;padding-bottom: 6px;color: black;}
+.nav a:hover{color:white;background: rgba(25,25,25,0.9);}
+
+/*.right_main a,.profile p{border:solid 1px black;}*/
+.right_main{display: none}
+.right_main a{display: block;width: 120px;height: 30px;margin: 100px auto;
+    font-size: 20px;text-align: center;color: black;background-color: white;
+    text-decoration: none;padding-top: 10px;
+    border-radius: 10px/5px;}
+.right_main a:hover{color: white;background-color: rgba(25,25,25,0.9);}
+/*box2*/
+#CSS,.opus{border:solid 1px black;}
+#CSS h1{/*width: 200px;*/height: 40px;margin: 60px auto;text-align: center;padding-top: 10px;}
+#CSS h1:hover{/*动画*/}
+.opus{float:left;width: 300px;height:400px;margin-left: 80px;}
+.opus h2{text-align: center}
+
+/*box3*/
+#H5{background-color: rgba(25,25,25,0.9);}
+#H5 h1{text-align: center;margin-top: 20px;color: #ffffff}
+#H5 p{text-align: center;margin-top: 20px;}
+#H5 input,#JS input{width: 70px;height: 25px;font-size: 18px;text-align: center;margin-left: 50px;}
+#H5 input:hover,#JS input:hover{cursor: pointer}
+.jigsaw{width: 400px;height: 400px;margin: 50px 0 0 100px;float: left ;}
+.jigsaw_chip{width: 420px;}
+.jigsaw_chip img{border: 0;}
+.grid{border: solid 1px #000000;width: 130px;height: 130px;float: left}
+/*box4*/
+#JS{background-color:rgba(25,25,25,0.7); }
+.box h1{text-align: center;margin-top: 20px;}
+.box p{text-align: center;margin-top: 20px;}
+.perish{width: 500px;height: 350px;margin: 50px auto;}
+#JS input{float: right;margin: -350px 200px 0 0;}
+
+
+.back_top{
+    position: fixed;top:90%;left:95%;
+}
+.back_top a{text-decoration: none;color: #ffffff;font-size: 30px;}
